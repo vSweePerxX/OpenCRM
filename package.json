@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "db:migrate": "wrangler d1 execute open-crm-db --local --file=src/server/schema.sql",
-    "dev": "pnpm db:migrate && concurrently -n ui,api -c cyan,green \"vite\" \"wrangler dev --port 8787\"",
+    "dev": "pnpm db:migrate && concurrently -n ui,api -c cyan,green \"vite\" \"wrangler dev --ip 127.0.0.1 --port 8787 --inspector-port 9230\"",
     "build": "vite build",
     "typecheck": "tsc --noEmit"
   },
